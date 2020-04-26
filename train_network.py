@@ -108,7 +108,7 @@ def main():
     style_image = np.ndarray.reshape(style_image, (1,) + style_image.shape)
 
     content_targets = utils.get_files(options.train_path)
-    content_shape = utils.load_image(content_targets[0]).shape
+    content_shape = utils.load_image(list(content_targets[0])).shape
 
     device = '/gpu:0' if options.use_gpu else '/cpu:0'
 
